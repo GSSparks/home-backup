@@ -6,7 +6,7 @@ LOGFILE=/home/$USER/bu_log_$TIME
 
 HONE_DIR='/home/$USER'
 HOME_STAT='/home/$USER/.home_stat'
-HOME_BU_DIR='$BACKUP'
+HOME_BU_DIR=$1
 
 if [ -e $HOME_STAT ] # Is there a stat file for home?
 then

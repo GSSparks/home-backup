@@ -7,7 +7,7 @@ LOGFILE=/home/$USER/bu_log_$TIME
 
 HOME_DIR="/home/$USER"
 HOME_BU_DIR=$1
-DIRECTORY=("Documents" "Pictures" "Videos")
+DIRECTORY=("Documents" "Pictures" "Videos") # Add directories you would like to backup here.
 
 for i in ${DIRECTORY[@]}; do
 

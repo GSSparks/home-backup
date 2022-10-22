@@ -1,5 +1,10 @@
 #!/bin/bash
 
+usage() {
+	echo "Usage: $0 [to/backup/path]"
+	exit 0
+}
+
 TIME=`date +%b-%d-%y`
 USER=`whoami` # Using current user's Home directory
 echo "The user is "$USER
@@ -7,6 +12,11 @@ LOGFILE=/home/$USER/bu_log_$TIME
 
 HOME_DIR="/home/$USER"
 HOME_BU_DIR=$1
+
+if [[ -z $HOME_BU_DIR ]] & [[ ! -d $HOME_BU_DIR ]]; then # Check to see if backup path was included and exists
+	usage
+fi
+
 DIRECTORY=("Documents" "Pictures" "Videos") # Add directories you would like to backup here.
 
 for i in ${DIRECTORY[@]}; do
